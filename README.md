@@ -8,12 +8,17 @@ This tool provides an automation framework to measure and analyze the performanc
 - **Historical Tracking:** A chart visualizes the Largest Contentful Paint (LCP) over multiple test runs, helping you track performance improvements or regressions over time.
 - **AI-Powered Analysis:** Leverages Google's Gemini model to analyze the data, identify potential causes of performance degradation, and suggest specific, actionable recommendations for developers.
 - **Sandboxed Testing:** All tests are run within a sandboxed `iframe` to isolate the process and ensure security.
+- **No Build Step Required:** Uses Babel Standalone for in-browser transpilation of TypeScript and JSX, allowing for easy setup and development.
 
 ---
 
 ## Installation and Setup
 
-Follow these steps to run the application locally.
+### How it Works (Development Environment)
+
+This project is configured to run directly in the browser without a traditional build step (like Vite or Webpack). It uses **Babel Standalone**, loaded from a CDN, to automatically transpile the modern TypeScript and JSX code (`.tsx` files) into plain JavaScript that browsers can understand. This happens on-the-fly when you load the page.
+
+### Steps
 
 1.  **Clone the Repository**
     ```bash
@@ -28,17 +33,17 @@ Follow these steps to run the application locally.
     *   In the root of the project directory, you'll need to make your API key available as an environment variable. The specific method depends on how you serve the files. The application code will access it via `process.env.API_KEY`.
 
 3.  **Run the Application**
-    This project is set up to run directly in the browser without a complex build step. You just need to serve the files from a local web server. An easy way to do this is with the `serve` package.
+    Because the project uses `.tsx` files, you just need to serve the project folder from a local web server. An easy way to do this is with the `serve` package.
 
-    *   If you don't have it, you can run it directly with `npx`:
+    *   If you don't have `serve` installed globally, you can run it directly using `npx`:
     ```bash
     npx serve
     ```
-    *   This will start a local server. You can then open the provided URL (usually `http://localhost:3000`) in your browser to use the application.
+    *   This will start a local server. You can then open the provided URL (usually `http://localhost:3000`) in your browser to use the application. The in-browser transpiler will handle the rest.
 
 ---
 
-## How it Works
+## How the Test Works
 
 The application simulates the performance impact of an extension by running two tests for any given URL:
 
