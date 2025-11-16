@@ -11,6 +11,33 @@ This tool provides an automation framework to measure and analyze the performanc
 
 ---
 
+## Installation and Setup
+
+Follow these steps to run the application locally.
+
+1.  **Clone the Repository**
+    ```bash
+    # Make sure to replace <repository-url> with the actual URL
+    git clone <repository-url>
+    cd chrome-extension-performance-analyzer
+    ```
+
+2.  **Set up your Gemini API Key**
+    This project uses the Google Gemini API for its AI analysis feature. You will need to obtain an API key from [Google AI Studio](https://aistudio.google.com/).
+
+    *   In the root of the project directory, you'll need to make your API key available as an environment variable. The specific method depends on how you serve the files. The application code will access it via `process.env.API_KEY`.
+
+3.  **Run the Application**
+    This project is set up to run directly in the browser without a complex build step. You just need to serve the files from a local web server. An easy way to do this is with the `serve` package.
+
+    *   If you don't have it, you can run it directly with `npx`:
+    ```bash
+    npx serve
+    ```
+    *   This will start a local server. You can then open the provided URL (usually `http://localhost:3000`) in your browser to use the application.
+
+---
+
 ## How it Works
 
 The application simulates the performance impact of an extension by running two tests for any given URL:
