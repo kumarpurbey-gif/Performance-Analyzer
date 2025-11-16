@@ -1,0 +1,5 @@
+{
+  "name": "Chrome Extension Performance Analyzer",
+  "description": "An automation framework to measure and analyze the performance impact of a Chrome browser extension on websites. It provides side-by-side comparisons, historical tracking, and AI-powered optimization suggestions.",
+  "requestFramePermissions": []
+}
